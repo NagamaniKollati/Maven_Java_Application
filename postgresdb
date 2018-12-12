@@ -13,6 +13,30 @@ PGDATA=/var/lib/postgresql/data
 POSTGRES_DB
 $ docker volume create pgdata
 $ docker run -it --rm -v pgdata:/var/lib/postgresql/data postgres
+   ===========================================================
+   create database seafood;
+   list datbases \l
+   connect to database \c seafood;
+   psql -h localhost -p 5432 -U postgress testdb
+   DROP DATABASE [ IF EXISTS ] name
+   CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);
+\d list tables
+\d tablename to describe
+INSERT INTO TABLE_NAME (column1, column2, column3,...columnN)
+VALUES (value1, value2, value3,...valueN);
+SELECT * FROM table_name;
+SELECT CURRENT_TIMESTAMP;
+UPDATE table_name
+SET column1 = value1, column2 = value2...., columnN = valueN
+WHERE [condition];
+DELETE FROM table_name
+WHERE [condition];
 
 
 
