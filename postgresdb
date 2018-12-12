@@ -1,0 +1,19 @@
+#download postgres database from dockerhub
+$docker pull postgres
+#start postgres instance
+$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+#connect to it from an application
+docker run --name some-app --link some-postgres:postgres -d application-that-uses-postgres
+#connect it psql
+$ docker run -it --rm --link some-postgres:postgres postgres psql -h postgres -U postgres
+#Environmental variables:
+POSTGRES_PASSWORD="mysecretpassword"
+POSTGRES_USER=postgres
+PGDATA=/var/lib/postgresql/data
+POSTGRES_DB
+$ docker volume create pgdata
+$ docker run -it --rm -v pgdata:/var/lib/postgresql/data postgres
+
+
+
+
